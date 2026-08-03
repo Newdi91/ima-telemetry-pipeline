@@ -1,0 +1,35 @@
+bundle:
+  name: telemetry_pipeline
+
+
+include:
+  - resources/*.yaml
+
+
+sync:
+  include:
+    - src/
+  exclude:
+    - .venv/
+    - .databricks/
+    - __pycache__/
+    - .git/
+
+variables:
+  project_name:
+    description: "Name of the project"
+    default: "telemetry_pipeline"
+  admin_email:
+    description: "Email for job error notifications"
+    default: "marco.gnudi@libero.it" 
+
+targets:
+  dev:
+    default: true
+    workspace:
+      host: https://dbc-55b1c542-4098.cloud.databricks.com/?o=2093459498195279
+      
+      
+      
+      
+      
